@@ -14,15 +14,7 @@ const diverseDeputation = (m , w) => {
     return fact(n) / (fact(r) * fact(n - r));
   }
 
-  const combinations = nCr(m + w, 3)// all possible combos
-
-  // let allWomenProb = 1, allMenProb = 1;
-  // for (let i = 0; i < 2; i++) {
-  //   allWomenProb *= (w - i) / (w - i + m);
-  //   allMenProb *= (m - i) / (m - i + w); 
-  // }
-
-  // const monoGenderProb = allWomenProb + allMenProb;
+  const combinations = nCr(m + w, 3)  // all possible combos
 
   const allMenOutcomes = Math.floor(fact(m) / (6 * fact(m - 3)));
   const allWomenOutcomes = Math.floor(fact(w) / (6 * fact(w - 3)));
@@ -35,14 +27,3 @@ const diverseDeputation = (m , w) => {
 }
 
 console.log(`answer is ${diverseDeputation(1, 3)}`);
-
-// [1,2,3] women , [4,5,6] men
-// 50%
-// [2,3] women , [4,5,6] men
-// 40%
-// [3] women , [4,5,6] men
-// 25%
-
-// 3 -> 1
-// 4 -> 4
-// 5 -> 60
