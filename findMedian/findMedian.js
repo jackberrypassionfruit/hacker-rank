@@ -1,15 +1,15 @@
 function findMedian(arr) {
   // Write your code here
-  for (let q in [1,2,3,4,5]) {
+  for (let q in arr) {
     for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] > arr[Number(i) + 1]) {
-        let tmp = arr[Number(i) + 1];
-        arr[Number(i) + 1] = arr[i];
+      // console.log(typeof(i));
+      if (arr[i] > arr[i + 1]) {
+        let tmp = arr[i + 1];
+        arr[i + 1] = arr[i];
         arr[i] = tmp;
-        console.log(arr[i], arr[Number(i) + 1]);
+        console.log(arr[i], arr[i + 1]);
       }
     }
-    console.log(q);
   }
   return arr;
 }
