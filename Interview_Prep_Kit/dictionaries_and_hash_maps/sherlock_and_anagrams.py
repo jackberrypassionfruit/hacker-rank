@@ -23,14 +23,20 @@ def sherlockAndAnagrams(s):
   anagram_pairs = 0
 
   # For each possible length of subarray (nothing to test against once it's half of len(s))
-  for i in range(1, (len(s) // 2) + 1):
+  for i in range(1, len(s) // 2):
     # For each location of the subarray to test
-    for j in range(1, len(s) - i):
-      test_array = s[j:j+i+1] # TEST THIS ON PAPER PLZ
+    for j in range(i, len(s) - i):
+      control_array = s[j:j+i] # TEST THIS ON PAPER PLZ
+      print("control_array", control_array)
       # For each subarray that I test the one at j against
       for k in range(i):
-        if is_anagram(test_array, s[j + k:j + k + i]): # TEST THIS ON PAPER PLZ
+        test_array = s[j + k:j + k + i]
+        print("test_array: ", test_array)
+        if is_anagram(control_array, test_array): # TEST THIS ON PAPER PLZ
           anagram_pairs += 1
+
+  return anagram_pairs
+  
           
           
-# print(sherlockAndAnagrams("shite"))
+print(sherlockAndAnagrams("falafal"))

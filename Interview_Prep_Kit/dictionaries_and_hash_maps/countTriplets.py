@@ -12,15 +12,15 @@ def countTriplets(arr, r):
     while k < len(arr):
       first_ratio = arr[j] / arr[i]
       second_ratio = arr[k] / arr[j]
-      print(f'i: {i} | j: {j} | k: {k} | first_ratio: {first_ratio} | second_ratio: {second_ratio}')
+      # print(f'i: {i} | j: {j} | k: {k} | first_ratio: {first_ratio} | second_ratio: {second_ratio}')
       if first_ratio < second_ratio:
         j += 1
       elif first_ratio > second_ratio:
         k += 1
       else: 
         if first_ratio == r and second_ratio == r:
-          triplets += 1
-          print('good')
+          triplets += (num_dict[arr[i]] * num_dict[arr[j]] * num_dict[arr[k]])
+          # print('good')
         j += 1
       
       if j >= k:
@@ -29,4 +29,4 @@ def countTriplets(arr, r):
   return triplets
           
           
-print(countTriplets([1, 3, 9, 9, 27, 81], 3))
+print(countTriplets([1, 3, 9, 9, 27, 81], 3)) 
